@@ -12,12 +12,14 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Table(name = "user")
 @Entity
+@Data
 public class User implements Serializable{
 	// TODO install LOMBOK
 
@@ -60,93 +62,6 @@ public class User implements Serializable{
 	@Column(name = "readonly")
 	@NotBlank
 	private int readonly;
-	
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-	
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-	
-	
-
-	public String getPerimeter() {
-		return perimeter;
-	}
-
-	public void setPerimeter(String perimeter) {
-		this.perimeter = perimeter;
-	}
-
-	public int getReadonly() {
-		return readonly;
-	}
-
-	public void setReadonly(int readonly) {
-		this.readonly = readonly;
-	}
-
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", age=" + age + ", username=" + username + ", email="
-				+ email + ", password=" + password + ", perimeter=" + perimeter + ", readonly=" + readonly + "]";
-	}
-
-	
-	
 	
 }

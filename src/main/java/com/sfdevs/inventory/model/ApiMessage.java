@@ -15,6 +15,7 @@ public static final String VALIDATION_ERRORS_PROPERTY = "validationErrors";
 	private String httpMessage;
 	private String moreInformation;
 	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+	
 	public int getHttpCode() {
 		return httpCode;
 	}
