@@ -3,6 +3,8 @@ package com.sfdevs.inventory.service;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 //import javax.validation.Valid;
 
 import com.sfdevs.inventory.model.User;
@@ -22,6 +24,8 @@ public interface IUserService {
 	Optional<User> updateById(User user, int userId);
 	
 	Optional<User> deleteById(int userId);
+
+	User create(@Valid User user);
 
 //	AuthenticationResponse getToken(@Valid UserDetails userDetails);
 //
