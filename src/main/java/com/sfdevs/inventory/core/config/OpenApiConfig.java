@@ -35,8 +35,7 @@ public class OpenApiConfig {
 	              .info(new Info()
 	            		  .title("Inventory API")
 	            		  .description("Manage your own objects collections")
-	            		  .version("v1.0.0")
-	            		  .license(new License().name("Apache 2.0").url("http://springdoc.org")));
+	            		  .version("1.0.0"));
 
 	  }
 }

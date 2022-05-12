@@ -1,7 +1,5 @@
 package com.sfdevs.inventory.model;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,19 +9,17 @@ import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Table(name = "user")
 @Entity
 @Data
-public class User implements Serializable{
+@Getter
+@Setter
+public class User{
 	// TODO install LOMBOK
-
-	private static final long serialVersionUID = 1L;
 
 	@Column(name = "id")
 	@Id
@@ -62,6 +58,7 @@ public class User implements Serializable{
 	@Column(name = "readonly")
 	@NotBlank
 	private int readonly;
+
 
 	
 }

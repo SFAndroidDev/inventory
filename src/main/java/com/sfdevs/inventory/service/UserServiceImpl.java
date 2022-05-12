@@ -71,21 +71,21 @@ public class UserServiceImpl implements IUserService /*, UserDetailsService*/{
 		return userRepository.save(user);
 	}
 
-	public User update(User user) {
-		if (user != null && userRepository.existsById(user.getId())) {
-			return userRepository.save(user);
+	public Optional<User> updateById(User user, int id) {
+		if (user != null && userRepository.existsById(id)) {
+			return  Optional.of(userRepository.save(user));
 		} else {
 			return null;
 		}
 	}
 
-	public boolean deleteById(int id) {
+	public Optional<User> deleteById(int id) {
 		if (!userRepository.existsById(id)) {
-			return false;
+			return null;
 		}
 		
 		userRepository.deleteById(id);
-		return true;
+		return null;
 	}
 
 //	@Override

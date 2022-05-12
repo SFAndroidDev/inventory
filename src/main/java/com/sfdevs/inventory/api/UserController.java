@@ -9,6 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -75,6 +76,16 @@ public class UserController {
 		LOGGER.info("Find user by email {}", email);
 		return userService.findByEmail(email)
 				.orElseThrow(() -> new ObjectNotFoundException("User not found with email {} " + email));
+		
+	}
+	
+	@Operation(summary = "Update user by ID")
+	@PutMapping(path = "id/{userId}")
+	public User updateById(@PathVariable int userId) {
+		LOGGER.info("Find user by ID {}", userId);
+//		return userService.updateById(userId)
+//				.orElseThrow(() -> new ObjectNotFoundException("User not found with ID {} " + userId));
+		return null;
 		
 	}
 

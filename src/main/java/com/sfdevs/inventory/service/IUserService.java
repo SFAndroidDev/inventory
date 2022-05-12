@@ -18,6 +18,10 @@ public interface IUserService {
 	Optional<User> findByLastName(String lastName);
 	
 	Optional<User> findByEmail(String email);
+	
+	Optional<User> updateById(User user, int userId);
+	
+	Optional<User> deleteById(int userId);
 
 //	AuthenticationResponse getToken(@Valid UserDetails userDetails);
 //
