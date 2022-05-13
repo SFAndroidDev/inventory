@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import com.sfdevs.inventory.exception.BadRequestException;
 import com.sfdevs.inventory.exception.ObjectNotFoundException;
 import com.sfdevs.inventory.model.ApiMessage;
 
@@ -21,5 +22,12 @@ public class ApiExceptionHandler {
 	@ResponseStatus(HttpStatus.NOT_FOUND)
 	public ApiMessage handleException(ObjectNotFoundException exception) {
 		return ApiMessage.of(HttpStatus.NOT_FOUND, exception.getLocalizedMessage());
+	}
+	
+	@ResponseBody
+	@ExceptionHandler
+	@ResponseStatus(HttpStatus.BAD_REQUEST)
+	public ApiMessage handleException(BadRequestException exception) {
+		return ApiMessage.of(HttpStatus.BAD_REQUEST, exception.getLocalizedMessage());
 	}
 }
