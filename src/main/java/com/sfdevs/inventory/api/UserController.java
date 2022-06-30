@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,6 +23,7 @@ import com.sfdevs.inventory.model.User;
 import com.sfdevs.inventory.service.IUserService;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -30,6 +32,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 @Validated
 @Tag(name = "Users")
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/users", produces = MediaType.APPLICATION_JSON_VALUE)
 public class UserController {
@@ -104,8 +107,12 @@ public class UserController {
 //				)
 	)
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-	public User createUser(@RequestBody @NotEmpty @Valid User user) {
-		LOGGER.info("Create a new user {}", user);
+	public User createUser(
+			@Parameter(description="User to add. Cannot null or empty.", 
+						required=true, 
+						schema=@Schema(implementation = User.class)
+			) @RequestBody @NotEmpty @Valid User user) {
+		LOGGER.info("Create a new user {}", user.toString());
 		return userService.create(user);
 		
 	}

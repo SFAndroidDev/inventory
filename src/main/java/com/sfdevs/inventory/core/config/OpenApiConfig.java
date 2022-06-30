@@ -35,7 +35,7 @@ public class OpenApiConfig {
 	              .info(new Info()
 	            		  .title("Inventory API")
 	            		  .description("Manage your own objects collections")
-	            		  .version("1.0.0"));
+	            		  .version("0.0.1-SNAPSHOT"));
 
 	  }
 }
