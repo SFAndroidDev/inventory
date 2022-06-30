@@ -28,12 +28,12 @@ public class CollectionController {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 	
-//	private final ICollectionService collectionService;
-//	
-//	@Autowired
-//	public UserController(ICollectionService collectionService) {
-//		this.collectionService = collectionService;
-//	}
+	private final ICollectionService collectionService;
+	
+	@Autowired
+	public CollectionController(ICollectionService collectionService) {
+		this.collectionService = collectionService;
+	}
 //	
 //	@Operation(summary = "Find all users")
 //	@GetMapping()

@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 
+
 public class ApiMessage {
 public static final String VALIDATION_ERRORS_PROPERTY = "validationErrors";
 	
