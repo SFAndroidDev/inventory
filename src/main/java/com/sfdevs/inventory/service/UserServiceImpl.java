@@ -16,7 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sfdevs.inventory.model.User;
-import com.sfdevs.inventory.repository.UserRepository;
+import com.sfdevs.inventory.repository.IUserRepository;
 
 //import com.sfdevs.cupipaw.model.AuthenticationResponse;
 //import com.sfdevs.cupipaw.repository.UserRepository;
@@ -28,11 +28,11 @@ public class UserServiceImpl implements IUserService /*, UserDetailsService*/{
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
 	
-	private final UserRepository userRepository;
+	private final IUserRepository userRepository;
 //	private final JwtTokenProvider jwtTokenProvider;
 	
 	@Autowired
-	public UserServiceImpl(UserRepository userRepository) {
+	public UserServiceImpl(IUserRepository userRepository) {
 		this.userRepository = userRepository;
 //		this.jwtTokenProvider = new JwtTokenProvider();
 	}

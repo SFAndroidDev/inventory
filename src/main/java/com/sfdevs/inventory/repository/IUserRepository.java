@@ -14,7 +14,7 @@ import com.sfdevs.inventory.model.User;
 
 @Transactional
 @Repository
-public interface UserRepository extends CrudRepository<User, Integer>{
+public interface IUserRepository extends CrudRepository<User, Integer>{
 	
 //	List<Owner> findAllBylNameContaining(String partOflName);
 //	List<Owner> findAllByfNameContaining(String partOffName);
